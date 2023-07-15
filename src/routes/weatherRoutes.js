@@ -44,14 +44,15 @@ router.get('/city/zipcode/:code', async (req, res) => {
     console.log(city)
     res.json({
       status: "success",
-      message: "wheather forecast retrived",
+      message: "Weather forecast retrieved",
       data: city.forecast
     })
   } catch(err){
     console.log(err.message)
     res.status(404).json({
-      status: "error message",
-      message: err.message
+      status: "error",
+      message: err.message,
+      error: err.message
     })
   }
 });
